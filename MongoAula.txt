@@ -1,0 +1,4 @@
+db.estados.aggragate([
+    {$project: {populacao: {$sum: "$cidades.populacao"}, sigla: 1, _id: 0} },
+    {$group: {_id: null, populacaoTotal: {$sum: "populacao} }}
+])
